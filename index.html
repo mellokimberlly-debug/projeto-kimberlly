@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meu blog tech</title>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+
+/* Cabeçalho */
+header {
+  background-color: #0d3b66;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+/* Posts */
+main {
+  padding: 20px;
+}
+
+.post {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.post-icon {
+  font-size: 25px;
+}
+
+
+.post h2 {
+  color: #0d3b66;
+  font-size: 20px;
+  margin: 0;
+}
+
+
+.author {
+  color: #777;
+  font-size: 13px;
+}
+
+
+.content {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+/* Botões */
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+
+button {
+
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  padding: 7px 12px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+
+}
+
+
+
+button:hover {
+  background-color: #ddd;
+}
+
+
+
+/* Cor quando curtir */
+
+.curtido {
+
+  background-color: #ff4d6d;
+  color: white;
+
+  border-color: #ff4d6d;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<header>
+
+<h1>Meu blog tech</h1>
+
+<p>
+Vou compartilhar conhecimentos sobre tecnologia e programação
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<article class="post">
+
+
+<div class="post-header">
+
+<span class="post-icon">📘</span>
+
+<h2>Meu primeiro post</h2>
+
+</div>
+
+
+<p class="author">
+Por: kimberlly
+</p>
+
+
+<p class="content">
+
+Bem-vindos ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.
+
+</p>
+
+
+
+<div class="botoes">
+
+
+<button class="botao-curtir">
+
+❤️ Curtir 
+<span>0</span>
+
+</button>
+
+
+
+<button class="botao-curtir">
+
+👍 Gostei
+<span>0</span>
+
+</button>
+
+
+</div>
+
+
+</article>
+
+
+
+
+<article class="post">
+
+
+<div class="post-header">
+
+<span class="post-icon">📘</span>
+
+<h2>Meu segundo post</h2>
+
+</div>
+
+
+<p class="author">
+Por: kimberlly
+</p>
+
+
+<p class="content">
+
+Bem-vindos ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.
+
+</p>
+
+
+
+<div class="botoes">
+
+
+<button class="botao-curtir">
+
+❤️ Curtir
+<span>0</span>
+
+</button>
+
+
+
+<button class="botao-curtir">
+
+👍 Gostei
+<span>0</span>
+
+</button>
+
+
+</div>
+
+
+</article>
+
+
+
+</main>
+
+
+</div>
+
+
+
+<script>
+
+
+const botoes = document.querySelectorAll(".botao-curtir");
+
+
+botoes.forEach(function(botao){
+
+
+let curtido = false;
+
+let contador = 0;
+
+
+
+botao.addEventListener("click", function(){
+
+
+let numero = botao.querySelector("span");
+
+
+
+if(curtido){
+
+contador--;
+
+curtido = false;
+
+botao.classList.remove("curtido");
+
+
+}
+else {
+
+
+contador++;
+
+curtido = true;
+
+botao.classList.add("curtido");
+
+
+}
+
+
+
+numero.textContent = contador;
+
+
+
+});
+
+
+
+});
+
+
+</script>
+
+
+
+</body>
+</html>
